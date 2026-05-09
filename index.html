@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Seven Riddles of Yevamot 97b — Complex Family Relationships in the Talmud</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;500;700;900&family=Cardo:ital,wght@0,400;0,700;1,400&family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --parchment: #f6efe1;
+    --parchment-dark: #ebe1cb;
+    --ink: #2b2118;
+    --ink-soft: #5a4a39;
+    --accent: #7a2d2d;
+    --accent-2: #4a6b8a;
+    --gold: #b08a3e;
+    --rule: #c8b896;
+    --male: #4a6b8a;
+    --female: #a14756;
+    --highlight: #d9a64a;
+    --neutral: #888;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background:
+      radial-gradient(circle at 20% 0%, #f9f3e3 0%, transparent 50%),
+      radial-gradient(circle at 80% 100%, #f1e8d3 0%, transparent 50%),
+      var(--parchment);
+    color: var(--ink);
+    font-family: 'EB Garamond', 'Cardo', Georgia, serif;
+    font-size: 18px;
+    line-height: 1.65;
+  }
+
+  .wrap {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 60px 32px 120px;
+  }
+
+  /* ---------- Header ---------- */
+  header.hero {
+    text-align: center;
+    padding: 40px 0 60px;
+    border-bottom: 2px solid var(--rule);
+    margin-bottom: 50px;
+    position: relative;
+  }
+  header.hero::before, header.hero::after {
+    content: "✦";
+    color: var(--gold);
+    font-size: 18px;
+    display: block;
+    margin: 8px 0;
+  }
+  .eyebrow {
+    font-family: 'Cardo', serif;
+    font-style: italic;
+    color: var(--ink-soft);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-size: 13px;
+    margin-bottom: 12px;
+  }
+  h1 {
+    font-family: 'EB Garamond', serif;
+    font-weight: 500;
+    font-size: clamp(32px, 5vw, 52px);
+    margin: 8px 0 12px;
+    line-height: 1.15;
+    color: var(--ink);
+  }
+  .subtitle {
+    font-family: 'Cardo', serif;
+    font-style: italic;
+    font-size: 20px;
+    color: var(--ink-soft);
+    max-width: 680px;
+    margin: 8px auto 0;
+  }
+  .source-cite {
+    margin-top: 22px;
+    font-family: 'Frank Ruhl Libre', serif;
+    color: var(--accent);
+    font-size: 18px;
+  }
+
+  /* ---------- Intro ---------- */
+  .intro {
+    background: rgba(255,255,255,0.45);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 28px 36px;
+    margin-bottom: 60px;
+    box-shadow: 0 2px 12px rgba(80,60,30,0.06);
+  }
+  .intro p { margin: 0 0 14px; }
+  .intro p:last-child { margin-bottom: 0; }
+
+  /* ---------- TOC ---------- */
+  nav.toc {
+    margin: 40px 0 60px;
+  }
+  nav.toc h2 {
+    font-family: 'EB Garamond', serif;
+    font-weight: 500;
+    font-size: 22px;
+    color: var(--accent);
+    margin: 0 0 16px;
+    text-align: center;
+  }
+  nav.toc ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    counter-reset: riddle;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 10px 24px;
+  }
+  nav.toc li {
+    counter-increment: riddle;
+    padding: 10px 14px;
+    border-left: 3px solid var(--gold);
+    background: rgba(255,255,255,0.4);
+    transition: background 0.2s;
+  }
+  nav.toc li:hover { background: rgba(255,255,255,0.8); }
+  nav.toc li::before {
+    content: counter(riddle, upper-roman) ". ";
+    color: var(--gold);
+    font-weight: 700;
+    font-family: 'Cardo', serif;
+  }
+  nav.toc a {
+    color: var(--ink);
+    text-decoration: none;
+    font-style: italic;
+    font-size: 17px;
+  }
+  nav.toc a:hover { color: var(--accent); }
+
+  /* ---------- Riddle sections ---------- */
+  section.riddle {
+    margin: 80px 0;
+    padding-top: 30px;
+    border-top: 1px solid var(--rule);
+    scroll-margin-top: 30px;
+  }
+  .riddle-num {
+    font-family: 'Cardo', serif;
+    color: var(--gold);
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    font-size: 14px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .riddle h2 {
+    font-family: 'EB Garamond', serif;
+    font-weight: 500;
+    font-size: 32px;
+    color: var(--accent);
+    margin: 0 0 4px;
+    line-height: 1.2;
+  }
+  .riddle .tag {
+    display: inline-block;
+    font-family: 'Cardo', serif;
+    font-style: italic;
+    font-size: 15px;
+    color: var(--ink-soft);
+    background: var(--parchment-dark);
+    padding: 2px 10px;
+    border-radius: 12px;
+    margin-bottom: 22px;
+  }
+
+  /* The original text + translation panel */
+  .text-panel {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin: 24px 0 30px;
+    background: rgba(255,255,255,0.55);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 24px 28px;
+  }
+  .aramaic {
+    direction: rtl;
+    text-align: right;
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 22px;
+    line-height: 1.9;
+    color: var(--ink);
+    border-left: 1px solid var(--rule);
+    padding-left: 28px;
+  }
+  .aramaic p { margin: 0 0 8px; }
+  .english {
+    font-family: 'Cardo', 'EB Garamond', serif;
+    font-style: italic;
+    font-size: 19px;
+    color: var(--ink);
+    line-height: 1.7;
+  }
+  .english p { margin: 0 0 8px; }
+  .english strong { font-style: normal; font-weight: 700; color: var(--ink); }
+
+  @media (max-width: 760px) {
+    .text-panel { grid-template-columns: 1fr; }
+    .aramaic { border-left: none; border-bottom: 1px solid var(--rule); padding-left: 0; padding-bottom: 16px; }
+  }
+
+  /* ---------- Diagram ---------- */
+  .diagram-wrap {
+    background: linear-gradient(180deg, #fcf6e7 0%, #f4ebd2 100%);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    padding: 30px 20px 20px;
+    margin: 30px 0;
+    box-shadow: inset 0 0 30px rgba(176, 138, 62, 0.08);
+  }
+  .diagram-wrap svg {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 760px;
+    height: auto;
+  }
+  .diagram-caption {
+    text-align: center;
+    font-style: italic;
+    color: var(--ink-soft);
+    font-size: 15px;
+    margin-top: 12px;
+    font-family: 'Cardo', serif;
+  }
+
+  /* SVG element styles (used inline) */
+  .node-male { fill: var(--male); stroke: #2c4356; stroke-width: 2; }
+  .node-female { fill: var(--female); stroke: #6b2a36; stroke-width: 2; }
+  .node-speaker {
+    stroke: var(--highlight);
+    stroke-width: 4;
+    filter: drop-shadow(0 0 6px rgba(217, 166, 74, 0.7));
+  }
+  .node-label {
+    font-family: 'EB Garamond', serif;
+    font-size: 14px;
+    fill: white;
+    text-anchor: middle;
+    font-weight: 700;
+    pointer-events: none;
+  }
+  .node-name {
+    font-family: 'EB Garamond', serif;
+    font-size: 13px;
+    fill: var(--ink);
+    text-anchor: middle;
+    font-style: italic;
+  }
+  .descent { stroke: var(--ink-soft); stroke-width: 1.6; fill: none; }
+  .descent-incest { stroke: var(--accent); stroke-width: 1.8; stroke-dasharray: 5,4; fill: none; }
+  .union { stroke: var(--ink-soft); stroke-width: 1.6; fill: none; }
+  .union-incest { stroke: var(--accent); stroke-width: 2; stroke-dasharray: 6,4; fill: none; }
+  .annotation {
+    font-family: 'Cardo', serif;
+    font-style: italic;
+    font-size: 12px;
+    fill: var(--accent);
+    text-anchor: middle;
+  }
+  .speaker-tag {
+    font-family: 'EB Garamond', serif;
+    font-size: 11px;
+    fill: var(--highlight);
+    text-anchor: middle;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+  }
+
+  /* ---------- Explanation ---------- */
+  .explain {
+    background: rgba(255,255,255,0.4);
+    border-left: 3px solid var(--gold);
+    padding: 18px 24px;
+    margin: 24px 0;
+    border-radius: 0 4px 4px 0;
+  }
+  .explain h3 {
+    font-family: 'EB Garamond', serif;
+    font-weight: 500;
+    font-size: 18px;
+    color: var(--accent);
+    margin: 0 0 10px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .explain ul { margin: 6px 0; padding-left: 22px; }
+  .explain li { margin: 4px 0; }
+  .explain p { margin: 6px 0; }
+
+  /* ---------- Legend ---------- */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px 32px;
+    padding: 16px 20px;
+    background: rgba(255,255,255,0.55);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    margin: 30px 0 50px;
+    font-size: 14px;
+    font-family: 'Cardo', serif;
+  }
+  .legend-item { display: flex; align-items: center; gap: 8px; }
+  .legend-swatch {
+    width: 22px; height: 22px;
+    display: inline-block;
+  }
+  .legend-male { background: var(--male); border: 2px solid #2c4356; }
+  .legend-female { background: var(--female); border: 2px solid #6b2a36; border-radius: 50%; }
+  .legend-speaker { background: transparent; border: 3px solid var(--highlight); border-radius: 50%; }
+  .legend-line {
+    display: inline-block;
+    width: 30px;
+    height: 2px;
+    background: var(--ink-soft);
+  }
+  .legend-line-incest {
+    display: inline-block;
+    width: 30px;
+    border-top: 2px dashed var(--accent);
+  }
+
+  /* ---------- Footer ---------- */
+  footer {
+    margin-top: 100px;
+    padding-top: 30px;
+    border-top: 2px solid var(--rule);
+    text-align: center;
+    color: var(--ink-soft);
+    font-style: italic;
+    font-size: 15px;
+  }
+  footer .ornament { color: var(--gold); margin: 0 8px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <div class="eyebrow">Talmud Bavli · Tractate Yevamot</div>
+  <h1>The Seven Riddles of Yevamot 97b</h1>
+  <div class="subtitle">Cryptic family puzzles preserved in the Babylonian Talmud, illustrated with genealogical diagrams.</div>
+  <div class="source-cite">יבמות צ״ז ע״ב</div>
+</header>
+
+<div class="intro">
+  <p>The Talmud at <strong>Yevamot 97b</strong> preserves a remarkable sequence of seven riddles, each describing a tangle of family relationships that, on first hearing, sound impossible. The Talmud then provides the solution &mdash; almost always involving incestuous unions among gentiles, which the Sages refuse to attribute to a Jew.</p>
+  <p>The first riddle stands out: it can occur lawfully under the Rabbis' opinion (against R&apos; Yehuda), where a man may marry a woman raped or seduced by his father. The seventh riddle likewise has a permitted solution. Together these puzzles function both as a halakhic exercise and as a kind of dark intellectual play &mdash; a genre of legal aggadah.</p>
+  <p>The diagrams below use standard genealogical conventions: <span style="color:var(--male);font-weight:700;">squares for men</span>, <span style="color:var(--female);font-weight:700;">circles for women</span>, and a gold ring to mark <strong style="color:var(--highlight);">the speaker of the riddle</strong>. Dashed red lines mark forbidden unions.</p>
+</div>
+
+<div class="legend" aria-label="Diagram legend">
+  <div class="legend-item"><span class="legend-swatch legend-male"></span> Male</div>
+  <div class="legend-item"><span class="legend-swatch legend-female"></span> Female</div>
+  <div class="legend-item"><span class="legend-swatch legend-speaker"></span> Speaker of the riddle</div>
+  <div class="legend-item"><span class="legend-line"></span> Permitted union / descent</div>
+  <div class="legend-item"><span class="legend-line-incest"></span> Incestuous union</div>
+</div>
+
+<nav class="toc" aria-label="Riddles">
+  <h2>The Seven Riddles</h2>
+  <ol>
+    <li><a href="#r1">My half-brother is the husband of my mother</a></li>
+    <li><a href="#r2">He is my brother and he is my son</a></li>
+    <li><a href="#r3">Peace upon you, my son &mdash; I am the daughter of your sister</a></li>
+    <li><a href="#r4">This boy whom I carry is my son, and I am the daughter of his brother</a></li>
+    <li><a href="#r5">Woe, woe for my brother, who is my father, and my husband...</a></li>
+    <li><a href="#r6">You and I are siblings; your father and I are siblings; your mother and I are siblings</a></li>
+    <li><a href="#r7">You and I are cousins; your father and I are cousins; your mother and I are cousins</a></li>
+  </ol>
+</nav>
+
+<!-- ============================================================
+     RIDDLE I
+     ============================================================ -->
+<section class="riddle" id="r1">
+  <div class="riddle-num">Riddle I</div>
+  <h2>"My half-brother is the husband of my mother"</h2>
+  <span class="tag">Solvable in a permitted manner — per the Rabbis, against R&apos; Yehuda</span>
+
+  <div class="text-panel">
+    <div class="aramaic" lang="he">
+      <p>״אח מאב ולא מאם,</p>
+      <p>והוא בעלה דאם,</p>
+      <p>ואנא ברתה דאנתתיה״.</p>
+      <p>אמר רמי בר חמא:</p>
+      <p>דלא כרבי יהודה דמתניתין.</p>
+    </div>
+    <div class="english">
+      <p>A woman says: <strong>I have a half-brother from my father and not from my mother;</strong></p>
+      <p><strong>and my half-brother is the husband of my mother;</strong></p>
+      <p><strong>and I am the daughter of his wife.</strong></p>
+      <p><strong>Rami bar Ḥama said:</strong> This is <strong>not</strong> legitimate <strong>according to R&apos; Yehuda in the Mishnah</strong>, who holds a man may not marry a woman his father had relations with, even outside marriage.</p>
+    </div>
+  </div>
+
+  <div class="diagram-wrap">
+    <svg viewBox="0 0 760 360" role="img" aria-label="Family tree for Riddle I">
+      <!-- Generation 1: Father, Mother A (speaker's mother), Mother B -->
+      <g>
+        <!-- Mother B (other woman) -->
+        <circle class="node-female" cx="140" cy="80" r="28"/>
+        <text class="node-label" x="140" y="85">B</text>
+        <text class="node-name" x="140" y="130">other woman</text>
+
+        <!-- Father -->
+        <rect class="node-male" x="332" y="52" width="56" height="56" rx="3"/>
+        <text class="node-label" x="360" y="85">F</text>
+        <text class="node-name" x="360" y="130">father</text>
+
+        <!-- Mother A -->
+        <circle class="node-female" cx="600" cy="80" r="28"/>
+        <text class="node-label" x="600" y="85">A</text>
+        <text class="node-name" x="600" y="130">speaker&apos;s mother</text>
+      </g>
+
+      <!-- Father — Mother B union (could be marriage) -->
+      <line class="union" x1="168" y1="80" x2="332" y2="80"/>
+      <!-- Father — Mother A union (non-marital, per Rabbis) -->
+      <line class="union-incest" x1="388" y1="80" x2="572" y2="80"/>
+      <text class="annotation" x="480" y="70">non-marital</text>
+
+      <!-- Children: Half-brother (from B) and Speaker (from A) -->
+      <line class="descent" x1="240" y1="80" x2="240" y2="200"/>
+      <line class="descent" x1="500" y1="80" x2="500" y2="200"/>
+      <line class="descent" x1="240" y1="200" x2="500" y2="200"/>
+      <line class="descent" x1="240" y1="200" x2="240" y2="240"/>
+      <line class="descent" x1="500" y1="200" x2="500" y2="240"/>
+
+      <!-- Half-brother -->
+      <rect class="node-male" x="212" y="240" width="56" height="56" rx="3"/>
+      <text class="node-label" x="240" y="273">H</text>
+      <text class="node-name" x="240" y="320">half-brother</text>
+
+      <!-- Speaker -->
+      <circle class="node-female node-speaker" cx="500" cy="270" r="30"/>
+      <text class="node-label" x="500" y="275">S</text>
+      <text class="speaker-tag" x="500" y="245">SPEAKER</text>
+      <text class="node-name" x="500" y="320">daughter</text>
+
+      <!-- Half-brother marries Mother A (curve) -->
+      <path class="union" d="M 240 296 Q 240 348 600 348 Q 628 348 628 108"/>
+      <text class="annotation" x="430" y="343">Half-brother marries the speaker&apos;s mother</text>
+    </svg>
+    <div class="diagram-caption">F begets a son (H) and, separately, a daughter (S). Later H marries A — permitted because F was never married to A.</div>
+  </div>
+
+  <div class="explain">
+    <h3>How the relationships hold</h3>
+    <ul>
+      <li><strong>Half-brother by father, not mother:</strong> H and S share father F, but have different mothers (B and A).</li>
+      <li><strong>Husband of my mother:</strong> H later marries A.</li>
+      <li><strong>I am the daughter of his wife:</strong> S is the biological daughter of A — the woman H married.</li>
+      <li><strong>Why this is permitted (Rabbis):</strong> F was never <em>married</em> to A; the relationship that produced S was outside marriage. Per the majority view, that does not bar F&apos;s son H from later marrying A. R&apos; Yehuda would forbid it.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================================================
+     RIDDLE II
+     ============================================================ -->
+<section class="riddle" id="r2">
+  <div class="riddle-num">Riddle II</div>
+  <h2>"He is my brother and he is my son"</h2>
+  <span class="tag">A non-Jew who had relations with his daughter</span>
+
+  <div class="text-panel">
+    <div class="aramaic" lang="he">
+      <p>״אח הוא,</p>
+      <p>וברי הוא,</p>
+      <p>אחתיה אנא דהאי דדרינא אכתפאי״ —</p>
+      <p>משכחת לה בגוי הבא על בתו.</p>
+    </div>
+    <div class="english">
+      <p>A woman says: <strong>He is my brother and he is my son;</strong></p>
+      <p><strong>I am the sister of this one whom I carry on my shoulders.</strong></p>
+      <p>You find this <strong>in the case of a non-Jew who had relations with his daughter</strong>, and she bore him a son.</p>
+    </div>
+  </div>
+
+  <div class="diagram-wrap">
+    <svg viewBox="0 0 600 400" role="img" aria-label="Family tree for Riddle II">
+      <!-- Father -->
+      <rect class="node-male" x="272" y="40" width="56" height="56" rx="3"/>
+      <text class="node-label" x="300" y="73">F</text>
+      <text class="node-name" x="300" y="118">father</text>
+
+      <!-- Descent line to daughter -->
+      <line class="descent" x1="300" y1="96" x2="300" y2="170"/>
+      <line class="descent" x1="300" y1="170" x2="180" y2="170"/>
+      <line class="descent" x1="180" y1="170" x2="180" y2="200"/>
+
+      <!-- Daughter (speaker) -->
+      <circle class="node-female node-speaker" cx="180" cy="230" r="30"/>
+      <text class="node-label" x="180" y="235">D</text>
+      <text class="speaker-tag" x="180" y="200">SPEAKER</text>
+      <text class="node-name" x="180" y="285">daughter</text>
+
+      <!-- Forbidden union F-D (curved arrow) -->
+      <path class="union-incest" d="M 272 68 Q 130 68 150 210"/>
+      <text class="annotation" x="190" y="55">F has relations with his daughter</text>
+
+      <!-- Joint descent to son: from midpoint -->
+      <line class="descent-incest" x1="300" y1="120" x2="300" y2="290"/>
+      <line class="descent-incest" x1="180" y1="260" x2="180" y2="290"/>
+      <line class="descent-incest" x1="180" y1="290" x2="300" y2="290"/>
+      <line class="descent-incest" x1="240" y1="290" x2="240" y2="320"/>
+
+      <!-- Son -->
+      <rect class="node-male" x="212" y="320" width="56" height="56" rx="3"/>
+      <text class="node-label" x="240" y="353">S</text>
+      <text class="node-name" x="430" y="357">S is both D&apos;s brother (via F) and her son</text>
+    </svg>
+    <div class="diagram-caption">F&apos;s daughter D bears him a son S. Through F, S is D&apos;s brother; through D, S is her son.</div>
+  </div>
+
+  <div class="explain">
+    <h3>How the relationships hold</h3>
+    <ul>
+      <li><strong>He is my brother:</strong> S and D share a father (F).</li>
+      <li><strong>He is my son:</strong> D physically bore S.</li>
+      <li><strong>Talmudic restraint:</strong> The Talmud insists this is "a non-Jew" — refusing to imagine a Jew acting this way.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================================================
+     RIDDLE III
+     ============================================================ -->
+<section class="riddle" id="r3">
+  <div class="riddle-num">Riddle III</div>
+  <h2>"Peace upon you, my son — I am the daughter of your sister"</h2>
+  <span class="tag">A non-Jew who had relations with his daughter&apos;s daughter</span>
+
+  <div class="text-panel">
+    <div class="aramaic" lang="he">
+      <p>״שלמא לך ברי,</p>
+      <p>בת אחתיך אנא״ —</p>
+      <p>משכחת לה בגוי הבא על בת בתו.</p>
+    </div>
+    <div class="english">
+      <p>A woman says: <strong>Peace upon you, my son;</strong></p>
+      <p><strong>I am the daughter of your sister.</strong></p>
+      <p>You find it <strong>in the case of a non-Jew who had relations with the daughter of his daughter</strong>, who bore him a son.</p>
+    </div>
+  </div>
+
+  <div class="diagram-wrap">
+    <svg viewBox="0 0 720 460" role="img" aria-label="Family tree for Riddle III">
+      <!-- Generation 1: Grandfather + outside woman -->
+      <circle class="node-female" cx="160" cy="60" r="26"/>
+      <text class="node-label" x="160" y="65">W</text>
+      <text class="node-name" x="160" y="105">wife/partner</text>
+
+      <rect class="node-male" x="332" y="34" width="56" height="56" rx="3"/>
+      <text class="node-label" x="360" y="67">G</text>
+      <text class="node-name" x="360" y="105">grandfather</text>
+
+      <line class="union" x1="186" y1="60" x2="332" y2="60"/>
+
+      <!-- Generation 2: Grandfather's daughter (mother of speaker) -->
+      <line class="descent" x1="259" y1="60" x2="259" y2="140"/>
+      <line class="descent" x1="259" y1="140" x2="259" y2="180"/>
+
+      <circle class="node-female" cx="259" cy="210" r="28"/>
+      <text class="node-label" x="259" y="215">D</text>
+      <text class="node-name" x="259" y="258">G&apos;s daughter</text>
+
+      <!-- D has child with someone (not detailed) -->
+      <rect class="node-male" x="68" y="184" width="50" height="50" rx="3" opacity="0.6"/>
+      <text class="node-label" x="93" y="214">?</text>
+      <text class="node-name" x="93" y="258">other man</text>
+      <line class="union" x1="118" y1="210" x2="231" y2="210"/>
+
+      <!-- Granddaughter (speaker) -->
+      <line class="descent" x1="175" y1="210" x2="175" y2="290"/>
+      <line class="descent" x1="175" y1="290" x2="175" y2="320"/>
+
+      <circle class="node-female node-speaker" cx="175" cy="350" r="30"/>
+      <text class="node-label" x="175" y="355">GD</text>
+      <text class="speaker-tag" x="175" y="318">SPEAKER</text>
+      <text class="node-name" x="175" y="405">granddaughter</text>
+
+      <!-- Incestuous union G — GD -->
+      <path class="union-incest" d="M 388 68 Q 600 60 600 350 Q 600 410 220 380"/>
+      <text class="annotation" x="600" y="200">G has relations with</text>
+      <text class="annotation" x="600" y="218">his granddaughter GD</text>
+
+      <!-- Their son -->
+      <line class="descent-incest" x1="360" y1="430" x2="500" y2="430"/>
+      <line class="descent-incest" x1="430" y1="380" x2="430" y2="430"/>
+
+      <rect class="node-male" x="402" y="380" width="56" height="56" rx="3"/>
+      <text class="node-label" x="430" y="413">S</text>
+      <text class="node-name" x="540" y="413">son (G&apos;s son and GD&apos;s son)</text>
+    </svg>
+    <div class="diagram-caption">G fathers a daughter D. D has a daughter GD with another man. G then fathers a son S with GD. GD says to S: "I am the daughter of your sister" — because S&apos;s paternal half-sister D is GD&apos;s mother.</div>
+  </div>
+
+  <div class="explain">
+    <h3>How the relationships hold</h3>
+    <ul>
+      <li><strong>S&apos;s sister:</strong> S&apos;s father is G. G&apos;s daughter D is therefore S&apos;s paternal half-sister.</li>
+      <li><strong>I am the daughter of your sister:</strong> The speaker GD is D&apos;s daughter — i.e., S&apos;s sister&apos;s daughter, even though she is also S&apos;s mother.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================================================
+     RIDDLE IV
+     ============================================================ -->
+<section class="riddle" id="r4">
+  <div class="riddle-num">Riddle IV</div>
+  <h2>"This boy whom I carry is my son, and I am the daughter of his brother"</h2>
+  <span class="tag">A non-Jew who had relations with his son&apos;s daughter</span>
+
+  <div class="text-panel">
+    <div class="aramaic" lang="he">
+      <p>״דלאי דדלו דוולא,</p>
+      <p>ליפול בכו סתר פתר:</p>
+      <p>דהאי דדרינא הוא בר,</p>
+      <p>ואנא ברת אחוה״ —</p>
+      <p>משכחת לה בגוי הבא על בת בנו.</p>
+    </div>
+    <div class="english">
+      <p>A woman says: <strong>Water-drawers who draw water in buckets, let this cryptic riddle fall among you:</strong></p>
+      <p><strong>This boy whom I carry is my son, and I am the daughter of his brother.</strong></p>
+      <p>You find it <strong>in the case of a non-Jew who had relations with the daughter of his son</strong>.</p>
+    </div>
+  </div>
+
+  <div class="diagram-wrap">
+    <svg viewBox="0 0 720 460" role="img" aria-label="Family tree for Riddle IV">
+      <!-- Generation 1 -->
+      <circle class="node-female" cx="160" cy="60" r="26"/>
+      <text class="node-label" x="160" y="65">W</text>
+      <text class="node-name" x="160" y="105">wife/partner</text>
+
+      <rect class="node-male" x="332" y="34" width="56" height="56" rx="3"/>
+      <text class="node-label" x="360" y="67">G</text>
+      <text class="node-name" x="360" y="105">grandfather</text>
+
+      <line class="union" x1="186" y1="60" x2="332" y2="60"/>
+
+      <!-- Generation 2: G's son -->
+      <line class="descent" x1="259" y1="60" x2="259" y2="140"/>
+      <line class="descent" x1="259" y1="140" x2="259" y2="180"/>
+
+      <rect class="node-male" x="231" y="184" width="56" height="56" rx="3"/>
+      <text class="node-label" x="259" y="217">SN</text>
+      <text class="node-name" x="259" y="258">G&apos;s son</text>
+
+      <!-- SN partners with another woman -->
+      <circle class="node-female" cx="80" cy="210" r="24" opacity="0.6"/>
+      <text class="node-label" x="80" y="215">?</text>
+      <text class="node-name" x="80" y="258">other woman</text>
+      <line class="union" x1="104" y1="210" x2="231" y2="210"/>
+
+      <!-- Granddaughter (speaker) -->
+      <line class="descent" x1="167" y1="210" x2="167" y2="290"/>
+      <line class="descent" x1="167" y1="290" x2="167" y2="320"/>
+
+      <circle class="node-female node-speaker" cx="167" cy="350" r="30"/>
+      <text class="node-label" x="167" y="355">GD</text>
+      <text class="speaker-tag" x="167" y="318">SPEAKER</text>
+      <text class="node-name" x="167" y="405">granddaughter (via son)</text>
+
+      <!-- Incest line G -> GD -->
+      <path class="union-incest" d="M 388 68 Q 600 60 600 350 Q 600 410 212 380"/>
+      <text class="annotation" x="600" y="200">G has relations with</text>
+      <text class="annotation" x="600" y="218">his granddaughter GD</text>
+
+      <!-- Their son -->
+      <line class="descent-incest" x1="360" y1="430" x2="500" y2="430"/>
+      <line class="descent-incest" x1="430" y1="380" x2="430" y2="430"/>
+
+      <rect class="node-male" x="402" y="380" width="56" height="56" rx="3"/>
+      <text class="node-label" x="430" y="413">S</text>
+      <text class="node-name" x="540" y="413">son (G&apos;s son and GD&apos;s son)</text>
+    </svg>
+    <div class="diagram-caption">Now the granddaughter is reached through G&apos;s <em>son</em>, not his daughter. S&apos;s paternal brother SN is the speaker&apos;s father.</div>
+  </div>
+
+  <div class="explain">
+    <h3>How the relationships hold</h3>
+    <ul>
+      <li><strong>This boy is my son:</strong> GD physically bore S.</li>
+      <li><strong>I am the daughter of his brother:</strong> S&apos;s father is G. G&apos;s son SN is therefore S&apos;s paternal half-brother. GD is SN&apos;s daughter — S&apos;s "brother&apos;s daughter."</li>
+      <li><strong>Variant on Riddle III:</strong> Riddle III went through the daughter (mother-side); Riddle IV goes through the son (father-side).</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================================================
+     RIDDLE V
+     ============================================================ -->
+<section class="riddle" id="r5">
+  <div class="riddle-num">Riddle V — The Most Tangled</div>
+  <h2>"Woe, woe for my brother, who is my father, and my husband..."</h2>
+  <span class="tag">Three generations of incest in a single household</span>
+
+  <div class="text-panel">
+    <div class="aramaic" lang="he">
+      <p>״בייא בייא מאח,</p>
+      <p>והוא אב,</p>
+      <p>והוא בעל,</p>
+      <p>והוא בר בעל,</p>
+      <p>והוא בעלה דאם,</p>
+      <p>ואנא ברתה דאיתתיה,</p>
+      <p>ולא יהיב פיתא לאחוה יתמי בני ברתיה״ —</p>
+      <p>משכחת לה בגוי הבא על אמו והוליד ממנה בת,</p>
+      <p>וחזר ובא על אותה בת,</p>
+      <p>וחזר זקן ובא עליה והוליד ממנה בנים.</p>
+    </div>
+    <div class="english">
+      <p>A woman cries: <strong>Woe, woe (baya, baya) for my brother, who is my father; who is my husband; who is the son of my husband; who is the husband of my mother; and I am the daughter of his wife;</strong></p>
+      <p><strong>and he does not provide bread for his brothers, who are orphans, the sons of me, his daughter.</strong></p>
+      <p>You find it: <strong>a non-Jew had relations with his mother and she bore him a daughter</strong>; <strong>he then had relations with that daughter</strong>; <strong>and the old man — his father — also had relations with her, and she bore him sons.</strong></p>
+    </div>
+  </div>
+
+  <div class="diagram-wrap">
+    <svg viewBox="0 0 820 540" role="img" aria-label="Family tree for Riddle V">
+      <!-- Generation 1: Old man O + his wife M -->
+      <rect class="node-male" x="332" y="20" width="60" height="60" rx="3"/>
+      <text class="node-label" x="362" y="55">O</text>
+      <text class="node-name" x="362" y="98">"old man" (grandfather)</text>
+
+      <circle class="node-female" cx="600" cy="50" r="28"/>
+      <text class="node-label" x="600" y="55">M</text>
+      <text class="node-name" x="600" y="98">mother</text>
+
+      <line class="union" x1="392" y1="50" x2="572" y2="50"/>
+
+      <!-- Generation 2: their son N -->
+      <line class="descent" x1="482" y1="50" x2="482" y2="140"/>
+      <line class="descent" x1="482" y1="140" x2="482" y2="170"/>
+
+      <rect class="node-male" x="452" y="170" width="60" height="60" rx="3"/>
+      <text class="node-label" x="482" y="205">N</text>
+      <text class="node-name" x="482" y="247">son (the protagonist)</text>
+
+      <!-- Incest: N — M -->
+      <path class="union-incest" d="M 600 78 Q 720 130 540 200"/>
+      <text class="annotation" x="720" y="120">N has relations</text>
+      <text class="annotation" x="720" y="138">with his mother M</text>
+
+      <!-- Their daughter D -->
+      <line class="descent-incest" x1="600" y1="78" x2="600" y2="280"/>
+      <line class="descent-incest" x1="512" y1="200" x2="600" y2="280"/>
+
+      <circle class="node-female node-speaker" cx="600" cy="310" r="30"/>
+      <text class="node-label" x="600" y="315">D</text>
+      <text class="speaker-tag" x="600" y="278">SPEAKER</text>
+      <text class="node-name" x="600" y="365">daughter (= N&apos;s sister)</text>
+
+      <!-- Incest: N — D -->
+      <path class="union-incest" d="M 512 215 Q 540 320 570 310"/>
+      <text class="annotation" x="430" y="295">N has relations</text>
+      <text class="annotation" x="430" y="313">with his daughter D</text>
+
+      <!-- Incest: O — D -->
+      <path class="union-incest" d="M 362 80 Q 200 300 200 360 Q 200 410 570 350"/>
+      <text class="annotation" x="160" y="240">Old man O</text>
+      <text class="annotation" x="160" y="258">also has relations with D</text>
+
+      <!-- Sons of O and D -->
+      <line class="descent-incest" x1="380" y1="455" x2="540" y2="455"/>
+      <line class="descent-incest" x1="460" y1="395" x2="460" y2="455"/>
+
+      <rect class="node-male" x="350" y="455" width="50" height="50" rx="3"/>
+      <text class="node-label" x="375" y="485">S₁</text>
+
+      <rect class="node-male" x="510" y="455" width="50" height="50" rx="3"/>
+      <text class="node-label" x="535" y="485">S₂</text>
+
+      <text class="node-name" x="455" y="525">orphan sons (of D and O) — also N&apos;s paternal brothers</text>
+    </svg>
+    <div class="diagram-caption">Three incestuous unions stack on top of each other: O ↔ M (lawful), N ↔ M, N ↔ D, O ↔ D. The speaker D plays multiple roles in each.</div>
+  </div>
+
+  <div class="explain">
+    <h3>How <em>each</em> claim about N holds (from D&apos;s perspective)</h3>
+    <ul>
+      <li><strong>My brother:</strong> N and D share mother M.</li>
+      <li><strong>My father:</strong> N fathered D.</li>
+      <li><strong>My husband:</strong> D had relations with N.</li>
+      <li><strong>Son of my husband:</strong> O is also D&apos;s "husband" (had relations with her); N is O&apos;s son.</li>
+      <li><strong>Husband of my mother:</strong> M is D&apos;s mother; N had relations with M.</li>
+      <li><strong>I am the daughter of his wife:</strong> D is M&apos;s daughter; M is N&apos;s "wife."</li>
+      <li><strong>His brothers, the orphan sons of his daughter:</strong> The sons born to D from O are: (i) N&apos;s paternal half-brothers (same father, O); (ii) sons of N&apos;s daughter D. So they are simultaneously N&apos;s brothers and N&apos;s grandchildren — and N refuses to feed them.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================================================
+     RIDDLE VI
+     ============================================================ -->
+<section class="riddle" id="r6">
+  <div class="riddle-num">Riddle VI</div>
+  <h2>"You and I are siblings; your father and I are siblings; your mother and I are siblings"</h2>
+  <span class="tag">A non-Jew who had relations with his mother, then with one of their daughters</span>
+
+  <div class="text-panel">
+    <div class="aramaic" lang="he">
+      <p>״אנא ואת — אחי,</p>
+      <p>אנא ואבוך — אחי,</p>
+      <p>אנא ואמך — אחי״ —</p>
+      <p>משכחת לה בגוי הבא על אמו והוליד ממנה שתי בנות,</p>
+      <p>וחזר ובא על אחת מהן,</p>
+      <p>והוליד ממנה בן,</p>
+      <p>וקריא ליה אחתיה דאימא וקאמרה ליה הכי.</p>
+    </div>
+    <div class="english">
+      <p>A woman says to a boy: <strong>You and I are siblings; your father and I are siblings; your mother and I are siblings.</strong></p>
+      <p>You find it: <strong>a non-Jew had relations with his mother and she bore him two daughters; he then had relations with one of them, and she bore him a son. And the sister of the boy&apos;s mother</strong> (i.e. the other daughter) <strong>says this to him.</strong></p>
+    </div>
+  </div>
+
+  <div class="diagram-wrap">
+    <svg viewBox="0 0 760 500" role="img" aria-label="Family tree for Riddle VI">
+      <!-- Generation 1: M (mother) -->
+      <circle class="node-female" cx="500" cy="50" r="28"/>
+      <text class="node-label" x="500" y="55">M</text>
+      <text class="node-name" x="500" y="95">grandmother</text>
+
+      <!-- Generation 2: N (the non-Jew) -->
+      <rect class="node-male" x="170" y="170" width="60" height="60" rx="3"/>
+      <text class="node-label" x="200" y="205">N</text>
+      <text class="node-name" x="200" y="247">non-Jew (son of M)</text>
+
+      <!-- M -> N descent -->
+      <line class="descent" x1="500" y1="78" x2="500" y2="130"/>
+      <line class="descent" x1="500" y1="130" x2="200" y2="130"/>
+      <line class="descent" x1="200" y1="130" x2="200" y2="170"/>
+
+      <!-- Incest M — N -->
+      <path class="union-incest" d="M 470 60 Q 200 90 200 170"/>
+      <text class="annotation" x="320" y="78">N has relations with his mother M</text>
+
+      <!-- Their two daughters D1, D2 -->
+      <line class="descent-incest" x1="500" y1="80" x2="500" y2="280"/>
+      <line class="descent-incest" x1="230" y1="200" x2="230" y2="260"/>
+      <line class="descent-incest" x1="230" y1="260" x2="500" y2="260"/>
+      <line class="descent-incest" x1="320" y1="260" x2="320" y2="290"/>
+      <line class="descent-incest" x1="500" y1="260" x2="500" y2="290"/>
+
+      <circle class="node-female" cx="320" cy="320" r="28"/>
+      <text class="node-label" x="320" y="325">D₁</text>
+      <text class="node-name" x="320" y="365">daughter (mother of S)</text>
+
+      <circle class="node-female node-speaker" cx="500" cy="320" r="30"/>
+      <text class="node-label" x="500" y="325">D₂</text>
+      <text class="speaker-tag" x="500" y="288">SPEAKER</text>
+      <text class="node-name" x="500" y="365">daughter (the aunt)</text>
+
+      <!-- N — D1 incest -->
+      <path class="union-incest" d="M 230 230 Q 270 280 290 320"/>
+      <text class="annotation" x="160" y="290">N has relations with D₁</text>
+
+      <!-- Their son S -->
+      <line class="descent-incest" x1="200" y1="230" x2="200" y2="430"/>
+      <line class="descent-incest" x1="320" y1="348" x2="320" y2="430"/>
+      <line class="descent-incest" x1="200" y1="430" x2="320" y2="430"/>
+      <line class="descent-incest" x1="260" y1="430" x2="260" y2="450"/>
+
+      <rect class="node-male" x="232" y="450" width="56" height="56" rx="3"/>
+      <text class="node-label" x="260" y="483">S</text>
+      <text class="node-name" x="260" y="500">the boy</text>
+    </svg>
+    <div class="diagram-caption">N has two daughters (D₁, D₂) with his own mother M, and a son (S) with one of them (D₁). D₂ is the speaker — addressing her sister&apos;s son S.</div>
+  </div>
+
+  <div class="explain">
+    <h3>How D₂ holds three different sibling relationships at once</h3>
+    <ul>
+      <li><strong>You and I are siblings (D₂ and S):</strong> Both share father N — paternal siblings.</li>
+      <li><strong>Your father and I are siblings (D₂ and N):</strong> Both share mother M — maternal siblings. (D₂ is also N&apos;s daughter, but the riddle highlights the sibling tie.)</li>
+      <li><strong>Your mother and I are siblings (D₂ and D₁):</strong> Both are daughters of N and M — full siblings on both sides.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================================================
+     RIDDLE VII
+     ============================================================ -->
+<section class="riddle" id="r7">
+  <div class="riddle-num">Riddle VII</div>
+  <h2>"You and I are cousins; your father and I are cousins; your mother and I are cousins"</h2>
+  <span class="tag">Solvable in a permitted manner — three brothers, intermarriage of their children</span>
+
+  <div class="text-panel">
+    <div class="aramaic" lang="he">
+      <p>״אנא ואת — בני אחי,</p>
+      <p>אנא ואבוך — בני אחי,</p>
+      <p>אנא ואמך — בני אחי״.</p>
+      <p>הא בהיתירא נמי משכחת לה —</p>
+      <p>כגון ראובן שיש לו שתי בנות,</p>
+      <p>ואתא שמעון ונסב חדא מינייהו,</p>
+      <p>ואתא בר לוי ונסב חד מינייהו,</p>
+      <p>וקאמר ליה בריה דשמעון לבר בריה דלוי.</p>
+    </div>
+    <div class="english">
+      <p>A man says: <strong>You and I are cousins; your father and I are cousins; your mother and I are cousins.</strong></p>
+      <p>This <strong>can also be found in a permitted manner</strong>:</p>
+      <p><strong>Reuven had two daughters; his brother Shimon married one of them; the son of</strong> their third brother <strong>Levi married the other</strong>; and <strong>the son of Shimon</strong> says this <strong>to the grandson of Levi</strong>.</p>
+    </div>
+  </div>
+
+  <div class="diagram-wrap">
+    <svg viewBox="0 0 880 560" role="img" aria-label="Family tree for Riddle VII">
+      <!-- Patriarch -->
+      <rect class="node-male" x="412" y="14" width="56" height="56" rx="3"/>
+      <text class="node-label" x="440" y="47">P</text>
+      <text class="node-name" x="440" y="90">common patriarch</text>
+
+      <!-- Three brothers: Reuven, Shimon, Levi -->
+      <line class="descent" x1="440" y1="70" x2="440" y2="115"/>
+      <line class="descent" x1="160" y1="115" x2="720" y2="115"/>
+      <line class="descent" x1="160" y1="115" x2="160" y2="145"/>
+      <line class="descent" x1="440" y1="115" x2="440" y2="145"/>
+      <line class="descent" x1="720" y1="115" x2="720" y2="145"/>
+
+      <rect class="node-male" x="132" y="145" width="56" height="56" rx="3"/>
+      <text class="node-label" x="160" y="178">R</text>
+      <text class="node-name" x="160" y="222">Reuven</text>
+
+      <rect class="node-male" x="412" y="145" width="56" height="56" rx="3"/>
+      <text class="node-label" x="440" y="178">Sh</text>
+      <text class="node-name" x="440" y="222">Shimon</text>
+
+      <rect class="node-male" x="692" y="145" width="56" height="56" rx="3"/>
+      <text class="node-label" x="720" y="178">L</text>
+      <text class="node-name" x="720" y="222">Levi</text>
+
+      <!-- Reuven's two daughters A and B -->
+      <line class="descent" x1="160" y1="201" x2="160" y2="245"/>
+      <line class="descent" x1="100" y1="245" x2="220" y2="245"/>
+      <line class="descent" x1="100" y1="245" x2="100" y2="275"/>
+      <line class="descent" x1="220" y1="245" x2="220" y2="275"/>
+
+      <circle class="node-female" cx="100" cy="305" r="26"/>
+      <text class="node-label" x="100" y="310">A</text>
+      <text class="node-name" x="100" y="350">daughter of R</text>
+
+      <circle class="node-female" cx="220" cy="305" r="26"/>
+      <text class="node-label" x="220" y="310">B</text>
+      <text class="node-name" x="220" y="350">daughter of R</text>
+
+      <!-- Levi's son LS -->
+      <line class="descent" x1="720" y1="201" x2="720" y2="305"/>
+
+      <rect class="node-male" x="692" y="280" width="56" height="56" rx="3"/>
+      <text class="node-label" x="720" y="313">L&apos;</text>
+      <text class="node-name" x="720" y="355">son of Levi</text>
+
+      <!-- Marriages: Shimon — A,  L' — B -->
+      <path class="union" d="M 412 175 Q 320 175 130 290"/>
+      <text class="annotation" x="280" y="170">Shimon marries A</text>
+
+      <path class="union" d="M 692 305 Q 460 305 246 305"/>
+      <text class="annotation" x="460" y="288">L&apos; marries B</text>
+
+      <!-- Shimon's son SS (with A) -->
+      <line class="descent" x1="100" y1="331" x2="100" y2="380"/>
+      <line class="descent" x1="100" y1="380" x2="180" y2="380"/>
+      <line class="descent" x1="440" y1="201" x2="440" y2="380"/>
+      <line class="descent" x1="180" y1="380" x2="440" y2="380"/>
+      <line class="descent" x1="180" y1="380" x2="180" y2="410"/>
+
+      <rect class="node-male node-speaker" x="148" y="410" width="64" height="64" rx="3"/>
+      <text class="node-label" x="180" y="447">SS</text>
+      <text class="speaker-tag" x="180" y="404">SPEAKER</text>
+      <text class="node-name" x="180" y="498">son of Shimon</text>
+
+      <!-- L's son and B have a son LSS, then a son LSSS -->
+      <line class="descent" x1="220" y1="331" x2="220" y2="430"/>
+      <line class="descent" x1="720" y1="336" x2="720" y2="430"/>
+      <line class="descent" x1="220" y1="430" x2="720" y2="430"/>
+      <line class="descent" x1="500" y1="430" x2="500" y2="450"/>
+
+      <rect class="node-male" x="472" y="450" width="56" height="56" rx="3"/>
+      <text class="node-label" x="500" y="483">L&apos;&apos;</text>
+      <text class="node-name" x="500" y="525">grandson of Levi</text>
+    </svg>
+    <div class="diagram-caption">All three brothers (R, Sh, L) descend from a common patriarch. Sh marries his niece A; Levi&apos;s son L&apos; marries his cousin B. SS (son of Sh) and L&apos;&apos; (grandson of Levi) are linked three different ways.</div>
+  </div>
+
+  <div class="explain">
+    <h3>How SS and L&apos;&apos; are cousins three different ways</h3>
+    <ul>
+      <li><strong>You and I are cousins (SS and L&apos;&apos;):</strong> Their mothers, A and B, are sisters (both daughters of Reuven) — cousins via the mothers&apos; line.</li>
+      <li><strong>Your father and I are cousins (SS and L&apos;):</strong> SS&apos;s father is Shimon; L&apos;&apos;&apos;s father L&apos; is the son of Levi. Shimon and Levi are brothers, so their children SS and L&apos; are cousins via the fathers&apos; line.</li>
+      <li><strong>Your mother and I are cousins (SS and B):</strong> SS is Shimon&apos;s son; B is Reuven&apos;s daughter. Shimon and Reuven are brothers, so SS and B are cousins via the fathers&apos; line.</li>
+      <li><strong>The point:</strong> Unlike Riddles II–VI, no incest is required — only the systematic intermarriage of cousins across three brothers&apos; households.</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <span class="ornament">✦</span>
+  Tractate Yevamot 97b · Babylonian Talmud
+  <span class="ornament">✦</span>
+  <br />
+  Hebrew/Aramaic source and English translation adapted from the Koren-Steinsaltz tradition.
+  <br />
+  Diagrams composed in SVG.
+</footer>
+
+</div>
+</body>
+</html>
