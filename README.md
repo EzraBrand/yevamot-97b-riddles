@@ -1,6 +1,6 @@
 # The Seven Riddles of Yevamot 97b
 
-An illustrated walkthrough of the seven cryptic family-relationship riddles preserved in **Talmud Bavli, Yevamot 97b** — each presented with its Aramaic source, English translation, an SVG genealogy diagram, and a short halakhic explainer.
+An illustrated walkthrough of the seven cryptic family-relationship riddles preserved in **[Talmud Bavli, Yevamot 97b](https://chavrutai.com/talmud/Yevamot/97b#1)** — each presented with its Aramaic source, English translation, an SVG genealogy diagram, and a short halakhic explainer.
 
 **Live page:** https://ezrabrand.github.io/yevamot-97b-riddles/
 

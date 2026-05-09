@@ -88,8 +88,18 @@
   .source-cite {
     margin-top: 22px;
     font-family: 'Frank Ruhl Libre', serif;
-    color: var(--accent);
     font-size: 18px;
+  }
+  .source-cite a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 1px;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .source-cite a:hover {
+    color: var(--gold);
+    border-bottom-color: var(--gold);
   }
 
   /* ---------- Intro ---------- */
@@ -363,7 +373,7 @@
   <div class="eyebrow">Talmud Bavli · Tractate Yevamot</div>
   <h1>The Seven Riddles of Yevamot 97b</h1>
   <div class="subtitle">Cryptic family puzzles preserved in the Babylonian Talmud, illustrated with genealogical diagrams.</div>
-  <div class="source-cite">יבמות צ״ז ע״ב</div>
+  <div class="source-cite"><a href="https://chavrutai.com/talmud/Yevamot/97b#1" target="_blank" rel="noopener">יבמות צ״ז ע״ב</a></div>
 </header>
 
 <div class="intro">
